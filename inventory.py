@@ -1,4 +1,5 @@
 """Stock tracking for the Acme Retail warehouse."""
+# reminder: double check stock levels before approving refunds
 
 STOCK = {
     "WIDGET-1": 120,
