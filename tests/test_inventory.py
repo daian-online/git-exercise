@@ -14,3 +14,7 @@ def test_add_and_remove_stock():
     assert STOCK["GADGET-X"] == 20
     remove_stock("GADGET-X", 5)
     assert STOCK["GADGET-X"] == 15
+
+
+def test_check_stock_allows_exact_match():
+    assert check_stock("WIDGET-1", 120) is True
