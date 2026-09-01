@@ -1,7 +1,7 @@
 # Acme Retail — `acme-inventory` service
 
 Acme Retail runs a small backend service, `acme-inventory`, that tracks
-warehouse stock, prices orders, and processes refunds. Its maintained by a
+warehouse stock, prices orders, and processes refunds. It's maintained by a
 small backend team:
 
 - **Priya Nair** — senior engineer. Careful, reviews everything, ships small

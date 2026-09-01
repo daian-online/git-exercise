@@ -14,12 +14,25 @@ def calculate_tax(amount):
     return tax_cents / 100
 
 
+def calculate_bulk_discount(quantity):
+    """Return the bulk-discount percentage for a given quantity."""
+    if quantity >= 50:
+        return 15
+    if quantity >= 20:
+        return 10
+    if quantity >= 10:
+        return 5
+    return 0
+
+
 def calculate_final_price(price, quantity, discount_pct=0):
     """Return the final price for `quantity` units of `price`, including
-    an optional percentage discount and sales tax.
+    manual + bulk discounts and sales tax.
     """
     subtotal = price * quantity
-    discount_amount = subtotal * (discount_pct / 100)
+    bulk_pct = calculate_bulk_discount(quantity)
+    total_discount_pct = discount_pct + bulk_pct
+    discount_amount = subtotal * (total_discount_pct / 100)
     discounted = subtotal - discount_amount
     tax = calculate_tax(discounted)
     return discounted + tax
