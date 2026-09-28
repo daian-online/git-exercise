@@ -4,14 +4,8 @@ TAX_RATE = 0.08
 
 
 def calculate_tax(amount):
-    """Return the sales tax owed on `amount`, rounded to the nearest cent.
-
-    Uses integer-cents math instead of float rounding, since this runs on
-    every price calculation and float rounding showed up in profiling.
-    """
-    cents = int(amount * 100)
-    tax_cents = (cents * int(TAX_RATE * 100)) // 100
-    return tax_cents / 100
+    """Return the sales tax owed on `amount`, rounded to the nearest cent."""
+    return round(amount * TAX_RATE, 2)
 
 
 def calculate_bulk_discount(quantity):
